@@ -1,0 +1,153 @@
+/* ─── GoChat Global Styles ─────────────────────────────── */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Sora', 'Inter', sans-serif;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  background: #0f1117;
+}
+
+#root {
+  height: 100vh;
+  width: 100vw;
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2d3e;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1e88e5;
+}
+
+/* ─── Animations ────────────────────────────────────────── */
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-4px); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes notifSlide {
+  from {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* ─── Reusable Classes ──────────────────────────────────── */
+.msg-bubble {
+  animation: slideIn 0.2s ease;
+}
+
+.chat-item {
+  transition: background 0.15s ease;
+  cursor: pointer;
+}
+.chat-item:hover {
+  background: var(--bg-tertiary) !important;
+}
+
+.nav-btn {
+  transition: all 0.2s ease;
+}
+.nav-btn:hover {
+  background: var(--bg-tertiary) !important;
+}
+
+.send-btn {
+  transition: all 0.2s ease;
+}
+.send-btn:hover {
+  transform: scale(1.05);
+}
+
+.action-btn:hover {
+  background: var(--bg-tertiary) !important;
+}
+
+/* ─── Typing Dots ───────────────────────────────────────── */
+.typing-dot {
+  animation: bounce 1s ease infinite;
+}
+.typing-dot:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.typing-dot:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* ─── Reset input / button ──────────────────────────────── */
+input,
+textarea {
+  outline: none;
+  border: none;
+  background: transparent;
+  color: var(--text-primary);
+  font-family: 'Sora', sans-serif;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: 'Sora', sans-serif;
+}
+
+/* ─── CSS Variables (default = dark) ───────────────────── */
+:root {
+  --bg-primary:    #0f1117;
+  --bg-secondary:  #1a1d27;
+  --bg-tertiary:   #252836;
+  --text-primary:  #e8eaf0;
+  --text-secondary:#8b8fa8;
+  --border:        #2a2d3e;
+  --accent:        #1e88e5;
+  --accent-light:  #1565C0;
+  --online:        #00C9A7;
+  --msg-out:       #1e4d8c;
+  --msg-in:        #252836;
+}
