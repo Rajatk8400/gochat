@@ -5,7 +5,7 @@ import "./App.css";
 /* ══════════════════════════════════════════════════════════
    CONFIG  — change this to your backend URL when deployed
 ══════════════════════════════════════════════════════════ */
-const SERVER = "http://localhost:5000";
+const SERVER = "https://gochat-6ib7.onrender.com";
 
 /* ══════════════════════════════════════════════════════════
    API HELPER
@@ -966,4 +966,5 @@ export default function App() {
 
     </div>
   );
+
 }
